@@ -6,6 +6,7 @@
 
 package snake.presentation;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
@@ -117,8 +118,9 @@ public class ControlsPanel extends JPanel
 		});
 		
 		scoreLabel.setPreferredSize(new Dimension(70, 40));
+                scoreLabel.setForeground(Color.RED);
 		scoreLabel.setText("000");
-		scoreLabel.setFont(new Font("Verdana", Font.PLAIN, 30));
+		scoreLabel.setFont(new Font("Times New Reman", Font.PLAIN, 30));
 		
 		helpButton.setPreferredSize(new Dimension(55, 40));
 		helpButton.setText("Guide");
@@ -126,18 +128,19 @@ public class ControlsPanel extends JPanel
 			@Override
 			public void actionPerformed(ActionEvent e) {                        
 			    JOptionPane.showMessageDialog(panel,"                              "       
-                                    + "Hương dẫn\n\nGame rắn săn mồi , 2017. All rights reserved.\n"
+                                    + "Hướng dẫn\n\nGame rắn săn mồi , 2017. All rights reserved.\n"
                                     + "\n           Mau Bao + My Linh + Thuy Trang\n"
                                     + "\n Dùng phím mũi tên để di chuyển con rắn, bạn sẽ được\n"
-                                    + "\ncộng 1 điểm khi ăn, ăn càng nhiều rắn sẽ càng dài ra.\n"
+                                    + "\ncộng 1 điểm khi ăn khối màu đỏ, ăn càng nhiều rắn sẽ \n "
+                                    + "\ncàng dài ra.\n"
                                     + "\nBạn chọn tốc độ con rắn, kích thước rắn, số lượng vật cản\n"
-                                    + "\n      \n"
-                                    + "\n              Cách con rắn di chuyển\n"
-                                    + "\n           Up: Di chuyển rắn lên trên\n"
-                                    + "\n           Downs: Di chuyển rắn đi xuống\n"
-                                    + "\n           Left: Di chuyển rắn sang trái\n"
-                                    + "\n           Right: Di chuyển rắn sang phải\n",
-                                    "Hương dân...",JOptionPane.PLAIN_MESSAGE);
+                                    + "\n      "
+                                    + "\n                    Cách con rắn di chuyển\n"
+                                    + "\n                  Up: Di chuyển rắn lên trên\n"
+                                    + "\n                  Downs: Di chuyển rắn đi xuống\n"
+                                    + "\n                  Left: Di chuyển rắn sang trái\n"
+                                    + "\n                  Right: Di chuyển rắn sang phải\n",
+                                    "Hướng dẫn...",JOptionPane.PLAIN_MESSAGE);
 			}
 		});
                 aboutpButton.setPreferredSize(new Dimension(55, 40));
@@ -146,9 +149,9 @@ public class ControlsPanel extends JPanel
 			@Override
 			public void actionPerformed(ActionEvent e) {                        
 			    JOptionPane.showMessageDialog(panel,"                              "       
-                                    + "Snake 1.0\n\nGame rắn săn mồi , 2017. All rights reserved.\n"
+                                    + "Snake 1.0\n\nGame rắn săn mồi, 2017. All rights reserved.\n"
                                     + "\n           Mậu Bảo + Mỹ Linh + Thuỳ Trang\n"
-                                    + "\n      link<https://www.facebook.com/mau.bao.77>","About...",JOptionPane.PLAIN_MESSAGE);
+                                    + "\n           https://www.facebook.com/mau.bao.77","About...",JOptionPane.PLAIN_MESSAGE);
 			}
 		});
 		

@@ -49,8 +49,8 @@ public class MainPanel extends JPanel implements Runnable
 	{
 		this.frame = frame;
 		
-		setSize(new Dimension(700, 600));
-		setPreferredSize(new Dimension(600, 500));
+		setSize(new Dimension(605, 399));
+		setPreferredSize(new Dimension(500, 400));
 		buffer = new BufferedImage(getWidth(), getHeight(),
 				BufferedImage.TYPE_INT_RGB);
 
@@ -223,9 +223,9 @@ public class MainPanel extends JPanel implements Runnable
 			g2.setFont(new Font("TimeNewReman", Font.BOLD, 80));
 			g2.drawString("SNAKE", 260, 300);
 			g2.setFont(new Font("TimeNewReman", Font.BOLD, 20));
-			g2.drawString("by MauBao + MyLinh + ThuyTrang", 240, 330);
+			g2.drawString("by MauBao + MyLinh + ThuyTrang", 200, 330);
 			g2.setFont(new Font("TimeNewReman", Font.BOLD, 30));
-			g2.drawString("Press enter/speace to start", 170, 465);			
+			g2.drawString("Press enter/speace to start", 150, 365);			
 		}
 		else
 		{
@@ -253,9 +253,10 @@ public class MainPanel extends JPanel implements Runnable
 			{
 				g2.setColor(new Color(200,40,255));
 				g2.setFont(new Font("TimeNewReman", Font.BOLD, 70));
-				g2.drawString("GAME OVER", 130, this.getHeight() / 2);	
+				g2.drawString("GAME OVER", 90, this.getHeight() / 2);	
 				g2.setFont(new Font("TimeNewReman", Font.BOLD, 30));
-				g2.drawString("Press enter/speace to start", 155, this.getHeight() / 2 + 50);			
+				g2.drawString("Press enter/speace to start", 100, this.getHeight() / 2 + 50);	
+                                
 			}
 		}
 		g.drawImage(buffer, 0, 0, this);
