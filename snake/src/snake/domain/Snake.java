@@ -18,16 +18,19 @@ public class Snake extends Sprite
 	public static final int RIGHT = 1;
 	public static final int UP = 2;
 	public static final int DOWN = 3;
-	private LinkedList<Point> body = new LinkedList<Point>();
+	private LinkedList<Point> body = new LinkedList<Point>();//tạo một danh sách rỗng
+        
 	private int direction; //  LEFT: 0 | RIGHT: 1 | UP: 2 | DOWN: 3
 	
 	public Snake(int x, int y, int width, int height, int direction)
 	{
-		Point p = new Point(x,y);
+		Point p = new Point(x,y);//tạo 1 điểm mới
 		body.add(p);
 		
 		this.width = width;
 		this.height = height;
+                
+                //Trả về giá trị phím nhấn
 		this.direction = direction;
 	}
 	
@@ -42,6 +45,7 @@ public class Snake extends Sprite
 	}
 	
 	public boolean collide(Sprite sprite) {
+            //kiểm tra xem đến khi nào con rắn chạm tường
 		Iterator<Point> it = body.iterator();
 		int i = 0;
 		while(it.hasNext())
@@ -54,12 +58,12 @@ public class Snake extends Sprite
 		}
 
 		if(i == body.size())
-			return false;
-					
+			return false;			
 		return true;
 	}
 	
 	public boolean collideItself() {
+             //kiểm tra xem đến khi nào con rắn chạm chính mình
 		Iterator<Point> it = body.iterator();
 		int i = 0;
 		while(it.hasNext())
@@ -99,32 +103,32 @@ public class Snake extends Sprite
 	}
 	
 	public void grow()
-	{
+	{       //Xử lý khi rắn dài lên
 		Point p =  new Point();
 		Point last = body.getLast();
 
 		if(direction == Snake.LEFT)
 		{
-			p.setLocation(last.getX() + width, last.getY());
+                    p.setLocation(last.getX() + width, last.getY());
 		}
 		else if(direction == Snake.RIGHT)
 		{
-			p.setLocation(last.getX() - width, last.getY());
+                    p.setLocation(last.getX() - width, last.getY());
 		}
 		else if(direction == Snake.UP)
 		{
-			p.setLocation(last.getX(), last.getY() + height);
+                    p.setLocation(last.getX(), last.getY() + height);
 		}
 		else if(direction == Snake.DOWN)
 		{
-			p.setLocation(last.getX(), last.getY() - height);
+                    p.setLocation(last.getX(), last.getY() - height);
 		}
 				
 		body.addLast(p);		
 	}
 	
 	public void move()
-	{	
+	{	//Xử lý khi con rắn di chuyeern
 		if(body.size() > 0)
 		{
 			Point point = body.get(body.size() - 1);
